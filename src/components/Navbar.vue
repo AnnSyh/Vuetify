@@ -9,7 +9,17 @@
         @click="sideNav = !sideNav"
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
+
+      <v-toolbar-title>
+        <router-link
+          :to="'/'"
+          tag="span"
+          class="pointer"
+        >
+          Online stote
+        </router-link>
+      </v-toolbar-title>
+
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
@@ -18,8 +28,8 @@
           :key="i"
           :to="link.url"
         >
-          <v-icon left>{{link.icon}}</v-icon>
-          {{link.title}}
+          <v-icon left>{{ link.icon }}</v-icon>
+          {{ link.title }}
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -43,9 +53,9 @@
             :to="link.url"
           >
             <v-list-item-icon>
-              <v-icon>{{link.icon}}</v-icon>
+              <v-icon>{{ link.icon }}</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>{{link.title}}</v-list-item-title>
+            <v-list-item-title>{{ link.title }}</v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>
@@ -64,15 +74,16 @@
 export default {
   data() {
     return {
-      sideNav:false, //по умолчаниювыпадменюскрыто
+      sideNav: false, //по умолчаниювыпадменюскрыто
       drawer: false,
       group: null,
-      links:[
-        {title: 'Login', icon:'account_box', url:'/login'},
-        {title: 'Register', icon:'face', url:'/register'},
-        {title: 'Cart', icon:'shopping_cart', url:'/checkout'},
-        {title: 'New product', icon:'add', url:'/new'},
-        {title: 'My products', icon:'list', url:'/list'}
+      links: [
+        {title: 'Login',        icon: 'account_box',    url: '/login'},
+        {title: 'Register',     icon: 'face',           url: '/register'},
+        {title: 'Cart',         icon: 'shopping_cart',  url: '/checkout'},
+        {title: 'New product',  icon: 'add',            url: '/new'},
+        {title: 'My products',  icon: 'list',           url: '/list'},
+        {title: 'Guest book',   icon: 'book',     url: '/guest'}
       ],
     }
   },

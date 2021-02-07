@@ -7,6 +7,7 @@ import NewProduct from '@/components/Products/NewProduct'
 import Checkout from '@/components/User/Checkout'
 import Login from '@/components/Auth/Login'
 import Register from '@/components/Auth/Register'
+import Guest from '@/components/Guest'
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,10 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },{
+    path: '/guest',
+    name: 'guest',
+    component: Guest
   },
 ]
 

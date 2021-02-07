@@ -1,0 +1,21 @@
+.card-heading {
+  font-weight: bold;
+  word-wrap: break-word;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.card-description {
+  margin-top: auto;
+  padding-left: 1rem;
+}
+.card_price {
+  color: green;
+  font-size: 18px;
+}
+
+//carousel&card - перекрываем стили
+//  .v-carousel__item .v-image__image--cover,
+//  .v-card .v-image__image--cover {
+//    background-size: contain;
+//  }
+
