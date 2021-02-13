@@ -9,7 +9,7 @@
             next-icon="fa-angle-right"
           >
             <v-carousel-item
-              v-for="(product, i) in products"
+              v-for="(product, i) in promoProducts"
               :key="i"
               :src="product.imageSrc"
             >
@@ -18,6 +18,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+<!-- -->
     <v-container grid-list-lg>
       <v-layout row wrap>
         <v-flex
@@ -67,49 +68,61 @@
         </v-flex>
       </v-layout>
     </v-container>
-
+<!-- -->
   </div>
 </template>
 <script>
 export default {
 
-  data() {
-    return {
-      products: [
-        {
-          id: '1',
-          title: 'Lenovo njknsds',
-          vendor: 'Lenovo',
-          color: 'black',
-          material: 'metal/plastic',
-          description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
-          price: 784,
-          promo: 'false',
-          imageSrc: require('../assets/images/1196306_v01_b.jpg'),
-        },
-        {
-          id: '2',
-          title: 'Lenovo-2 njknsds',
-          vendor: 'Lenovo',
-          color: 'black',
-          material: 'metal/plastic',
-          description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
-          price: 784,
-          promo: 'true',
-          imageSrc: require('../assets/images/1196306_v01_b.jpg'),
-        },
-        {
-          id: '3',
-          title: 'Lenovo-3 njknsds',
-          vendor: 'Lenovo',
-          color: 'black',
-          material: 'metal/plastic',
-          description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
-          price: 784,
-          promo: 'true',
-          imageSrc: require('../assets/images/1196306_v01_b.jpg'),
-        }
-      ]
+  // data() {
+  //   return {
+  //     products: [
+  //       {
+  //         id: '1',
+  //         title: 'Lenovo njknsds',
+  //         vendor: 'Lenovo',
+  //         color: 'black',
+  //         material: 'metal/plastic',
+  //         description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
+  //         price: 784,
+  //         promo: 'false',
+  //         imageSrc: require('../assets/images/1196306_v01_b.jpg'),
+  //       },
+  //       {
+  //         id: '2',
+  //         title: 'Lenovo-2 njknsds',
+  //         vendor: 'Lenovo',
+  //         color: 'black',
+  //         material: 'metal/plastic',
+  //         description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
+  //         price: 784,
+  //         promo: 'true',
+  //         imageSrc: require('../assets/images/1196306_v01_b.jpg'),
+  //       },
+  //       {
+  //         id: '3',
+  //         title: 'Lenovo-3 njknsds',
+  //         vendor: 'Lenovo',
+  //         color: 'black',
+  //         material: 'metal/plastic',
+  //         description: 'dff,ef njohuh ju9h9h89 in9uh98h9hunjihbubii  ijoio',
+  //         price: 784,
+  //         promo: 'true',
+  //         imageSrc: require('../assets/images/1196306_v01_b.jpg'),
+  //       }
+  //     ]
+  //   }
+  // }
+
+  computed: {
+    promoProducts () {
+      return this.$store.getters.promoProducts
+    },
+    products () {
+      return this.$store.getters.products
+    },
+    loading () {
+      return this.$store.getters.loading
     }
   }
 }

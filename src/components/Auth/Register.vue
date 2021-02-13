@@ -82,14 +82,14 @@ export default {
 
     confirmPasswordRules: [
       v => !!v || 'Пароль отсутстует',
-      v => v === this.password || 'Password should match'
+      // v => v === this.password || 'Password should match'
     ],
 
 
   }),
   methods: {
     onSubmit() {
-      if (this.$refs.form.validate()) {
+      if(this.$refs.form.validate()){
         const user = {
           email: this.email,
           password: this.password,
