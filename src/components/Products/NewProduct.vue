@@ -118,9 +118,10 @@ export default {
           price: this.price,
           description: this.description,
           promo: this.promo,
-          // image: this.image
+          imageSrc: 'https://mmoguider.ru/wp-content/uploads/2018/08/treyler-igry-rf-online-900x506.jpg'
         }
-        console.log(product)
+        // console.log(product)
+        this.$store.dispatch('createProduct',product)
       }
     },
     upload () {
