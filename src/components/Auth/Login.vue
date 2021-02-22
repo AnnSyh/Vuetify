@@ -38,7 +38,8 @@
               color="deep-purple"
               dark
               @click="onSubmit"
-            :disabled="!valid"
+              :loading="loading"
+              :disabled="!valid || loading"
             >
               <!--              color="primary"-->
               Login
@@ -67,6 +68,11 @@ export default {
     ],
 
   }),
+  computed: {
+    loading () {
+      return this.$store.getters.loading
+    }
+  },
   methods: {
     onSubmit() {
       if(this.$refs.form.validate()){
@@ -76,6 +82,12 @@ export default {
         }
 
         console.log(user)
+        this.$store.dispatch('loginUser',user)
+          .then(()=>{
+            this.$router.push('/')
+
+          })
+          .catch(err => console.log(err))
       }
     }
   }
